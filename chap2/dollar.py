@@ -9,4 +9,4 @@ class Dollar():
         return self.__amount
 
     def times(self,multiplier:int):
-        self.__amount = self.__amount * multiplier
+        return(Dollar(self.__amount * multiplier))
