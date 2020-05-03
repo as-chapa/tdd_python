@@ -9,8 +9,8 @@ class Dollar():
         return self.__amount
 
     def times(self,multiplier:int):
-        return(Dollar(self.__amount * multiplier))
+        return(Dollar(self.amount * multiplier))
 
     def equals(self,object) -> bool:
         dollar = object
-        return self.__amount == dollar.__amount
+        return self.amount == dollar.amount

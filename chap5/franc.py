@@ -9,8 +9,8 @@ class Franc():
         return self.__amount
 
     def times(self,multiplier:int):
-        return(Franc(self.__amount * multiplier))
+        return(Franc(self.amount * multiplier))
 
     def equals(self,object) -> bool:
         franc = object
-        return self.__amount == franc.__amount
+        return self.amount == franc.amount
