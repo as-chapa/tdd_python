@@ -10,4 +10,4 @@ class Money():
 
     def equals(self,object) -> bool:
         money:Money = object
-        return self._amount == money.amount
+        return self._amount == money.amount and type(self) == type(money)
