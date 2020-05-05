@@ -1,11 +1,11 @@
 import unittest
 # テストコードを別ディレクトリにする場合はここのimport指定を変える
-import dollar
-import franc
+import dollar, franc
+import money
 
 class TestMoney(unittest.TestCase):
     def test_multiplication(self):
-        five = dollar.Dollar(5)
+        five: money.Money = money.Money.Dollar(5)
         # Pythonのインスタンスの等価性比較は、比較対象を明示しないといけないので、amountで比較
         # ただ、これって test_equality と同じことになっている気が。
         self.assertEqual(dollar.Dollar(10).amount,five.times(2).amount)

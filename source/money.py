@@ -1,3 +1,5 @@
+import dollar
+
 class Money():
     # pythonにはprotectedがないので、慣習的に「_」で定義する
     _amount : int
@@ -11,3 +13,7 @@ class Money():
     def equals(self,object) -> bool:
         money:Money = object
         return self._amount == money.amount and type(self) == type(money)
+
+    @staticmethod
+    def Dollar(amount: int):
+        return dollar.Dollar(amount)
