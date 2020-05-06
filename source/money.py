@@ -1,5 +1,4 @@
 from abc import ABCMeta, abstractmethod
-import dollar
 
 class Money(metaclass=ABCMeta):
     # pythonにはprotectedがないので、慣習的に「_」で定義する
@@ -21,4 +20,17 @@ class Money(metaclass=ABCMeta):
 
     @staticmethod
     def Dollar(amount: int):
-        return dollar.Dollar(amount)
+        return Dollar(amount)
+
+    @staticmethod
+    def Franc(amount: int):
+        return Franc(amount)
+
+class Dollar(Money):
+    def times(self,multiplier:int) -> Money:
+        return(Dollar(self.amount * multiplier))
+
+class Franc(Money):
+    def times(self,multiplier:int) -> Money:
+        return(Franc(self.amount * multiplier))
+
