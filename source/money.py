@@ -1,6 +1,7 @@
+from abc import ABCMeta, abstractmethod
 import dollar
 
-class Money():
+class Money(metaclass=ABCMeta):
     # pythonにはprotectedがないので、慣習的に「_」で定義する
     _amount : int
     def __init__(self,amount:int):
@@ -9,6 +10,10 @@ class Money():
     @property
     def amount(self):
         return self._amount
+
+    @abstractmethod
+    def times(self,multiplier:int):
+        pass
 
     def equals(self,object) -> bool:
         money:Money = object
