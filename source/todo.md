@@ -12,9 +12,9 @@
 - [x] ~~5 CHF * 2 = 10 CHF~~
 - [ ] Dollar と Franc の重複
 - [x] ~~equals の一般化~~
-- [ ] times の一般化
+- [ ] **times の一般化**
 - [x] ~~Franc と Dollar を比較する~~
-- [ ] **通貨の概念**
+- [x] ~~通貨の概念~~
 - [ ] testFrancMultiplicationを削除する？
 - [ ] 
 
