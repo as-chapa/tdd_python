@@ -24,14 +24,8 @@ class Money():
 
     @staticmethod
     def Dollar(amount: int):
-        return Dollar(amount, 'USD')
+        return Money(amount, 'USD')
 
     @staticmethod
     def Franc(amount: int):
-        return Franc(amount, 'CHF')
-
-class Dollar(Money):
-    pass
-
-class Franc(Money):
-    pass
+        return Money(amount, 'CHF')

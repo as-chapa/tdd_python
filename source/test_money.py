@@ -11,14 +11,7 @@ class TestMoney(unittest.TestCase):
     def test_equality(self):
         self.assertTrue(Money.Dollar(5).equals(Money.Dollar(5)))
         self.assertFalse(Money.Dollar(5).equals(Money.Dollar(6)))
-        self.assertTrue(Money.Franc(5).equals(Money.Franc(5)))
-        self.assertFalse(Money.Franc(5).equals(Money.Franc(6)))
         self.assertFalse(Money.Franc(5).equals(Money.Dollar(5)))
-
-    def test_franc_multiplication(self):
-        five = Money.Franc(5)
-        self.assertEqual(Money.Franc(10).amount,five.times(2).amount)
-        self.assertEqual(Money.Franc(15).amount,five.times(3).amount)
 
     def test_currency(self):
         self.assertEqual('USD',Money.Dollar(1).currency)
