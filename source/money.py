@@ -1,4 +1,5 @@
-class Money():
+from expression import Expression
+class Money(Expression):
     # pythonにはprotectedがないので、慣習的に「_」で定義する
     _amount : int
     _currency : str
@@ -21,6 +22,9 @@ class Money():
     def equals(self,object) -> bool:
         money:Money = object
         return self._amount == money.amount and self._currency == money.currency
+    
+    def plus(self,addend) -> Expression:
+        return Money(self.amount + addend.amount, self.currency)
 
     @staticmethod
     def Dollar(amount: int):

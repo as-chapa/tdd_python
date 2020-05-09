@@ -1,5 +1,13 @@
 # 「テスト駆動開発」メモ
-## TODOリスト
+## TODOリスト（New）
+- [ ] $5 + 10 CHF = $10（レートが2:1の場合）
+- [ ] **$5 + $5 = $10**
+
+## セルフTODOメモ
+- [ ] money, dollar, franc の import問題（money に全て書くことで回避）
+- [ ] classの宣言をdataclassに置き換える
+
+## TODOリスト（Old）
 - [ ] $5 + 10 CHF = $10（レートが2:1の場合）
 - [x] ~~$5 * 2 = $10~~
 - [x] ~~amount を private にする~~
@@ -17,7 +25,3 @@
 - [x] ~~通貨の概念~~
 - [ ] **testFrancMultiplicationを削除する？**
 - [ ] 
-
-## セルフTODOメモ
-- [ ] money, dollar, franc の import問題（ money に全て書くことで回避）
-- [ ] classの宣言をdataclassに置き換える
