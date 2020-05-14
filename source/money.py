@@ -1,4 +1,6 @@
 from expression import Expression
+from sum import Sum
+
 class Money(Expression):
     # pythonにはprotectedがないので、慣習的に「_」で定義する
     _amount : int
@@ -6,6 +8,12 @@ class Money(Expression):
     def __init__(self,amount:int, currency:str):
         self._amount = amount
         self._currency = currency
+    
+#    # unittestのassertEqualだとオブジェクトのIDの一致まで見るため、型＋値だけの比較を実装する
+#    def __eq__(self, other):
+#        if not isinstance(other, Money): return False
+#        if not self._amount == other.amount: return False
+#        if not self._currency == other.currency: return False
 
     # propetyデコレータで外部から直接変更しにくくする（言語特性上、禁止はできない）
     @property
@@ -24,7 +32,11 @@ class Money(Expression):
         return self._amount == money.amount and self._currency == money.currency
     
     def plus(self,addend) -> Expression:
-        return Money(self.amount + addend.amount, self.currency)
+        return Sum(self, addend)
+#        return Money(self.amount + addend.amount, self.currency)
+
+    def reduce(self, to: str):
+        return self
 
     @staticmethod
     def Dollar(amount: int):

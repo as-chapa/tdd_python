@@ -2,9 +2,14 @@
 ## TODOリスト（New）
 - [ ] $5 + 10 CHF = $10（レートが2:1の場合）
 - [ ] **$5 + $5 = $10**
+- [x] Bank.reduce(Money)
+- [ ] Moneyを変換して換算を行う
+- [ ] Reduce(Bank, String)
 
 ## セルフTODOメモ
-- [ ] money, dollar, franc の import問題（money に全て書くことで回避）
+- [ ] bank.pyからreduceの実装をsum.pyに引っ越す（P.93の対応）
+- [ ] __eq__ を書き換えて、オブジェクトID違いの型チェックを加える
+- [x] money, dollar, franc の import問題（money に全て書くことで回避）-> fromを使わない
 - [ ] classの宣言をdataclassに置き換える
 
 ## TODOリスト（Old）

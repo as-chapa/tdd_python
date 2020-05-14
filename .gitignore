@@ -1,1 +1,3 @@
+.gitignore
 source/__pycache__/
+source/memo.md
