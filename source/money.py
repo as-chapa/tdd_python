@@ -1,5 +1,6 @@
 from expression import Expression
 from sum import Sum
+from bank import Bank
 
 class Money(Expression):
     # pythonにはprotectedがないので、慣習的に「_」で定義する
@@ -33,10 +34,10 @@ class Money(Expression):
     
     def plus(self,addend) -> Expression:
         return Sum(self, addend)
-#        return Money(self.amount + addend.amount, self.currency)
 
-    def reduce(self, to: str):
-        return self
+    def reduce(self, bank: Bank, to: str):
+        rate: int = Bank().rate(self.currency, to)
+        return Money(self.amount / rate, to)
 
     @staticmethod
     def Dollar(amount: int):

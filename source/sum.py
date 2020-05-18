@@ -1,5 +1,6 @@
 from expression import Expression
 import money
+from bank import Bank
 
 class Sum(Expression):
     def __init__(self, augend, addend):
@@ -14,6 +15,6 @@ class Sum(Expression):
     def addend(self):
         return self._addend
     
-    def reduce(self, to: str):
+    def reduce(self, bank: Bank, to: str):
         amount: int = self._augend.amount + self._addend.amount
         return money.Money(amount, to)

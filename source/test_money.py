@@ -44,6 +44,15 @@ class TestMoney(unittest.TestCase):
         bank: Bank = Bank()
         result: Money = bank.reduce(Money.Dollar(1),'USD')
         self.assertEqual(Money.Dollar(1).amount, result.amount)
+    
+    def test_recuce_money_different_currency(self):
+        bank: Bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        result: Money = bank.reduce(Money.Franc(2), "USD")
+        self.assertEqual(Money.Dollar(1).amount, result.amount)
+
+    def test_identity_rate(self):
+        self.assertEqual(1, Bank().rate("USD","USD"))
 
 if __name__ == '__main__':
     unittest.main()

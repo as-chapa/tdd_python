@@ -1,15 +1,16 @@
 # 「テスト駆動開発」メモ
 ## TODOリスト（New）
 - [ ] $5 + 10 CHF = $10（レートが2:1の場合）
-- [ ] **$5 + $5 = $10**
-- [x] Bank.reduce(Money)
-- [ ] Moneyを変換して換算を行う
-- [ ] Reduce(Bank, String)
+- [x] ~~$5 + $5 = $10~~
+- [ ] $5 と $5 がMoneyを返す
+- [x] ~~Bank.reduce(Money)~~
+- [x] ~~Moneyを変換して換算を行う~~
+- [x] ~~Reduce(Bank, String)~~
 
 ## セルフTODOメモ
-- [ ] bank.pyからreduceの実装をsum.pyに引っ越す（P.93の対応）
+- [x] ~~bank.pyからreduceの実装をsum.pyに引っ越す（P.93の対応）~~
 - [ ] __eq__ を書き換えて、オブジェクトID違いの型チェックを加える
-- [x] money, dollar, franc の import問題（money に全て書くことで回避）-> fromを使わない
+- [x] ~~money, dollar, franc の import問題（money に全て書くことで回避）-> fromを使わない~~
 - [ ] classの宣言をdataclassに置き換える
 
 ## TODOリスト（Old）
