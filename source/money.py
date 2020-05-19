@@ -25,14 +25,14 @@ class Money(Expression):
     def currency(self) -> str:
         return self._currency
 
-    def times(self,multiplier:int):
+    def times(self,multiplier:int) -> Expression:
         return(Money(self.amount * multiplier, self.currency))
 
     def equals(self,object) -> bool:
         money:Money = object
         return self._amount == money.amount and self._currency == money.currency
     
-    def plus(self,addend) -> Expression:
+    def plus(self,addend: Expression) -> Expression:
         return Sum(self, addend)
 
     def reduce(self, bank: Bank, to: str):

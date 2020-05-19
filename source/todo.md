@@ -1,11 +1,13 @@
 # 「テスト駆動開発」メモ
 ## TODOリスト（New）
-- [ ] $5 + 10 CHF = $10（レートが2:1の場合）
+- [x] ~~$5 + 10 CHF = $10（レートが2:1の場合）~~
 - [x] ~~$5 + $5 = $10~~
 - [ ] $5 と $5 がMoneyを返す
 - [x] ~~Bank.reduce(Money)~~
 - [x] ~~Moneyを変換して換算を行う~~
 - [x] ~~Reduce(Bank, String)~~
+- [ ] Sum.plus
+- [ ] Expression.times
 
 ## セルフTODOメモ
 - [x] ~~bank.pyからreduceの実装をsum.pyに引っ越す（P.93の対応）~~

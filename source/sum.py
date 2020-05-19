@@ -3,9 +3,9 @@ import money
 from bank import Bank
 
 class Sum(Expression):
-    def __init__(self, augend, addend):
-        self._augend = augend
-        self._addend = addend
+    def __init__(self, augend: Expression, addend: Expression):
+        self._augend: Expression = augend
+        self._addend: Expression = addend
     
     @property
     def augend(self):
@@ -16,5 +16,8 @@ class Sum(Expression):
         return self._addend
     
     def reduce(self, bank: Bank, to: str):
-        amount: int = self._augend.amount + self._addend.amount
+        amount: int = self._augend.reduce(bank, to).amount + self._addend.reduce(bank, to).amount
         return money.Money(amount, to)
+
+    def plus(self,addend: Expression) -> Expression:
+        pass
