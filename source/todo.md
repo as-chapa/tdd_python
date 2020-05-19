@@ -6,8 +6,8 @@
 - [x] ~~Bank.reduce(Money)~~
 - [x] ~~Moneyを変換して換算を行う~~
 - [x] ~~Reduce(Bank, String)~~
-- [ ] Sum.plus
-- [ ] Expression.times
+- [x] ~~Sum.plus~~
+- [x] ~~Expression.times~~
 
 ## セルフTODOメモ
 - [x] ~~bank.pyからreduceの実装をsum.pyに引っ越す（P.93の対応）~~
