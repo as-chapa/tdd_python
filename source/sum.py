@@ -1,12 +1,13 @@
+from dataclasses import dataclass
 from expression import Expression
 import money
 from bank import Bank
 
+@dataclass
 class Sum(Expression):
-    def __init__(self, augend: Expression, addend: Expression):
-        self._augend: Expression = augend
-        self._addend: Expression = addend
-    
+    _augend: Expression
+    _addend: Expression
+
     @property
     def augend(self):
         return self._augend

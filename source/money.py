@@ -1,15 +1,13 @@
+from dataclasses import dataclass
 from expression import Expression
 from sum import Sum
 from bank import Bank
 
+@dataclass
 class Money(Expression):
     # pythonにはprotectedがないので、慣習的に「_」で定義する
     _amount : int
     _currency : str
-    def __init__(self,amount:int, currency:str):
-        self._amount = amount
-        self._currency = currency
-    
 #    # unittestのassertEqualだとオブジェクトのIDの一致まで見るため、型＋値だけの比較を実装する
 #    def __eq__(self, other):
 #        if not isinstance(other, Money): return False
