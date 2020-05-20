@@ -5,16 +5,15 @@ from bank import Bank
 
 @dataclass
 class Money(Expression):
-    # pythonにはprotectedがないので、慣習的に「_」で定義する
     _amount : int
     _currency : str
-#    # unittestのassertEqualだとオブジェクトのIDの一致まで見るため、型＋値だけの比較を実装する
-#    def __eq__(self, other):
-#        if not isinstance(other, Money): return False
-#        if not self._amount == other.amount: return False
-#        if not self._currency == other.currency: return False
 
-    # propetyデコレータで外部から直接変更しにくくする（言語特性上、禁止はできない）
+    def __eq__(self, other):
+        if not isinstance(other, Money): return False
+        if not self._amount == other.amount: return False
+        if not self._currency == other.currency: return False
+        return True
+
     @property
     def amount(self) -> int:
         return self._amount
@@ -26,10 +25,6 @@ class Money(Expression):
     def times(self,multiplier:int) -> Expression:
         return(Money(self.amount * multiplier, self.currency))
 
-    def equals(self,object) -> bool:
-        money:Money = object
-        return self._amount == money.amount and self._currency == money.currency
-    
     def plus(self,addend: Expression) -> Expression:
         return Sum(self, addend)
 

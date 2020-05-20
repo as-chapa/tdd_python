@@ -9,6 +9,3 @@ class Pair():
 
     def __hash__(self):
         return hash((self._fr, self._to))
-
-    def equals(self, fr: str , to: str) -> bool:
-        return self._fr == fr and self._to == to

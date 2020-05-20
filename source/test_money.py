@@ -8,13 +8,13 @@ from sum import Sum
 class TestMoney(unittest.TestCase):
     def test_multiplication(self):
         five: Money = Money.Dollar(5)
-        self.assertEqual(Money.Dollar(10).amount,five.times(2).amount)
-        self.assertEqual(Money.Dollar(15).amount,five.times(3).amount)
+        self.assertEqual(Money.Dollar(10),five.times(2))
+        self.assertEqual(Money.Dollar(15),five.times(3))
     
     def test_equality(self):
-        self.assertTrue(Money.Dollar(5).equals(Money.Dollar(5)))
-        self.assertFalse(Money.Dollar(5).equals(Money.Dollar(6)))
-        self.assertFalse(Money.Franc(5).equals(Money.Dollar(5)))
+        self.assertEqual(Money.Dollar(5), Money.Dollar(5))
+        self.assertNotEqual(Money.Dollar(5), Money.Dollar(6))
+        self.assertNotEqual(Money.Franc(5), Money.Dollar(5))
 
     def test_currency(self):
         self.assertEqual('USD',Money.Dollar(1).currency)
@@ -25,7 +25,7 @@ class TestMoney(unittest.TestCase):
         sum: Expression = five.plus(five)
         bank: Bank = Bank()
         reduced: Money = bank.reduce(sum,'USD')
-        self.assertEqual(Money.Dollar(10).amount, reduced.amount)
+        self.assertEqual(Money.Dollar(10), reduced)
     
     def test_plus_returns_sum(self):
         five: Money = Money.Dollar(5)
@@ -43,13 +43,13 @@ class TestMoney(unittest.TestCase):
     def test_reduce_money(self):
         bank: Bank = Bank()
         result: Money = bank.reduce(Money.Dollar(1),'USD')
-        self.assertEqual(Money.Dollar(1).amount, result.amount)
+        self.assertEqual(Money.Dollar(1), result)
     
     def test_recuce_money_different_currency(self):
         bank: Bank = Bank()
         bank.addRate("CHF", "USD", 2)
         result: Money = bank.reduce(Money.Franc(2), "USD")
-        self.assertEqual(Money.Dollar(1).amount, result.amount)
+        self.assertEqual(Money.Dollar(1), result)
 
     def test_identity_rate(self):
         self.assertEqual(1, Bank().rate("USD","USD"))
@@ -60,7 +60,7 @@ class TestMoney(unittest.TestCase):
         bank: Bank = Bank()
         bank.addRate("CHF", "USD", 2)
         result: Money = bank.reduce(five_bucks.plus(ten_flancs), "USD")
-        self.assertEqual(Money.Dollar(10).amount, result.amount)
+        self.assertEqual(Money.Dollar(10), result)
 
     def test_sum_plus_money(self):
         five_bucks: Expression = Money.Dollar(5)
@@ -69,7 +69,7 @@ class TestMoney(unittest.TestCase):
         bank.addRate("CHF", "USD", 2)
         sum: Expression = Sum(five_bucks, ten_flancs).plus(five_bucks)
         result: Money = bank.reduce(sum, "USD")
-        self.assertEqual(Money.Dollar(15).amount, result.amount)
+        self.assertEqual(Money.Dollar(15), result)
 
     def test_sum_times(self):
         five_bucks: Expression = Money.Dollar(5)
@@ -78,7 +78,7 @@ class TestMoney(unittest.TestCase):
         bank.addRate("CHF", "USD", 2)
         sum: Expression = Sum(five_bucks, ten_flancs).times(2)
         result: Money = bank.reduce(sum, "USD")
-        self.assertEqual(Money.Dollar(20).amount, result.amount)
+        self.assertEqual(Money.Dollar(20), result)
     
 if __name__ == '__main__':
     unittest.main()
