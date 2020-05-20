@@ -1,6 +1,4 @@
 from dataclasses import dataclass
-
-import money
 from pair import Pair
 
 @dataclass

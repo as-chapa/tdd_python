@@ -80,5 +80,11 @@ class TestMoney(unittest.TestCase):
         result: Money = bank.reduce(sum, "USD")
         self.assertEqual(Money.Dollar(20), result)
     
+    def test_sum_reduce(self):
+        five_bucks: Expression = Money.Dollar(5)
+        ten_flancs: Expression = Money.Franc(10)        
+        sum: Sum = Sum(five_bucks, ten_flancs)
+        self.assertFalse(sum.reduce(five_bucks,"USD"))
+    
 if __name__ == '__main__':
     unittest.main()

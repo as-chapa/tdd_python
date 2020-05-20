@@ -16,7 +16,8 @@ class Sum(Expression):
     def addend(self):
         return self._addend
     
-    def reduce(self, bank: Bank, to: str):
+    def reduce(self, bank, to: str):
+        if not isinstance(bank, Bank): return False
         amount: int = self._augend.reduce(bank, to).amount + self._addend.reduce(bank, to).amount
         return money.Money(amount, to)
 

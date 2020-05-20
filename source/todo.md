@@ -11,9 +11,9 @@
 
 ## セルフTODOメモ
 - [x] ~~bank.pyからreduceの実装をsum.pyに引っ越す（P.93の対応）~~
-- [ ] __eq__ を書き換えて、オブジェクトID違いの型チェックを加える
+- [x] __eq__ を書き換えて、オブジェクトID違いの型チェックを加える
 - [x] ~~money, dollar, franc の import問題（money に全て書くことで回避）-> fromを使わない~~
-- [ ] classの宣言をdataclassに置き換える
+- [x] classの宣言をdataclassに置き換える
 
 ## TODOリスト（Old）
 - [ ] $5 + 10 CHF = $10（レートが2:1の場合）

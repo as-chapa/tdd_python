@@ -13,7 +13,7 @@ class Money(Expression):
         if not self._amount == other.amount: return False
         if not self._currency == other.currency: return False
         return True
-
+    
     @property
     def amount(self) -> int:
         return self._amount
@@ -23,7 +23,7 @@ class Money(Expression):
         return self._currency
 
     def times(self,multiplier:int) -> Expression:
-        return(Money(self.amount * multiplier, self.currency))
+        return Money(self.amount * multiplier, self.currency)
 
     def plus(self,addend: Expression) -> Expression:
         return Sum(self, addend)
